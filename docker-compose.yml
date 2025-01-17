@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: sinevo_mem
+    restart: always
+    networks:
+      - proxy-net
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=xn--b1aeda2a.xn--p1ai
+      - VIRTUAL_PORT=8000
+      - LETSENCRYPT_HOST=xn--b1aeda2a.xn--p1ai
+      - LETSENCRYPT_EMAIL=vv1zard3x@ya.ru
+
+networks:
+  proxy-net:
+    external: true 
