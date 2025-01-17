@@ -10,11 +10,11 @@ services:
     expose:
       - "8000"
     environment:
-      - VIRTUAL_HOST="синёво.рф"
+      - VIRTUAL_HOST=синёво.рф
       - VIRTUAL_PORT=8000
-      - LETSENCRYPT_HOST="синёво.рф"
-      - LETSENCRYPT_EMAIL="vv1zard3x@ya.ru"
-      - NGINX_PROXY_CONTAINER="nginx-proxy"
+      - LETSENCRYPT_HOST=синёво.рф
+      - LETSENCRYPT_EMAIL=vv1zard3x@ya.ru
+      - NGINX_PROXY_CONTAINER=nginx-proxy
       - DEBUG=true
     command:
       - ./main
