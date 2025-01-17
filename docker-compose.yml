@@ -15,6 +15,9 @@ services:
       - LETSENCRYPT_HOST=xn--b1alpfl2h.xn--p1ai
       - LETSENCRYPT_EMAIL=vv1zard3x@ya.ru
       - NGINX_PROXY_CONTAINER=nginx-proxy
+      - ENABLE_IPV6=true
+      - HTTPS_METHOD=redirect
+      - SSL_POLICY=Mozilla-Modern
       - DEBUG=true
     command:
       - ./main
