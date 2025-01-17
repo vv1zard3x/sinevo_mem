@@ -22,6 +22,32 @@ func main() {
         }
     })
 
+    // Обработчик для /go
+    http.HandleFunc("/go", func(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set("Content-Type", "text/html; charset=utf-8")
+        html := `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    font-family: Arial, sans-serif;
+                    font-size: 24px;
+                }
+            </style>
+        </head>
+        <body>
+            <div>хуй будешь?</div>
+        </body>
+        </html>`
+        w.Write([]byte(html))
+    })
+
     // Настраиваем обработку статических файлов
     http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
