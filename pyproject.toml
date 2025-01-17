@@ -1,17 +1,18 @@
-[project]
+[tool.poetry]
 name = "sinevo-mem"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "Your Name",email = "you@example.com"}
-]
+description = "Django project with gif on main page"
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "django (>=5.1.5,<6.0.0)"
-]
 
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+django = ">=5.1.5,<6.0.0"
+gunicorn = ">=23.0.0,<24.0.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "gunicorn -b 0.0.0.0:8000 app.wsgi:application"
